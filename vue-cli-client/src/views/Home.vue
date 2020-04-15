@@ -1,17 +1,17 @@
 <template>
-  <div class="home">
-   Home
-  </div>
+	<div class="home">
+		<button type="button" class="btn btn-primary">Primary</button>
+	</div>
 </template>
 
 <script>
-// @ is an alias to /src
-//import HelloWorld from '@/components/HelloWorld.vue'
+	// @ is an alias to /src
+	//import Nav from '@/components/Nav.vue'
 
-export default {
-  name: 'Home',
-  components: {
-   
-  }
-}
+	export default {
+		name: 'Home',
+		components: {
+			//Nav
+		}
+	}
 </script>

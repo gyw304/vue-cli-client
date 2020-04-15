@@ -36,6 +36,14 @@ const routes = [
 		auth:true
 	},
     component: () => import(/* webpackChunkName: "about" */ '../components/Detail.vue')
+  },
+  {
+    path: '/AddProfile',
+    name: 'AddProfile',
+	meta:{
+		auth:true
+	},
+    component: () => import(/* webpackChunkName: "about" */ '../components/AddProfile.vue')
   }
 ]
 
@@ -46,20 +54,19 @@ const router = new VueRouter({
   routes
 });
 
-router.beforeEach((to, from, next)=>{
-	if (to.meta.auth){
-		if(localStorage.getItem('token')){
-			next()
-		}
-		else{
-			next({
-				path:'/login'
-			})
-		}
-	}else{
-		next();
-	}
-	
-})
+// router.beforeEach((to, from, next)=>{
+// 	if (to.meta.auth){
+// 		if(localStorage.getItem('token')){
+// 			next()
+// 		}
+// 		else{
+// 			next({
+// 				path:'/login'
+// 			})
+// 		}
+// 	}else{
+// 		next();
+// 	}
+// })
 
 export default router

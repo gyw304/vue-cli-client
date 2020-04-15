@@ -1,0 +1,56 @@
+@mixin css3($property, $value) {
+	@each $prefix in -webkit-,
+	-moz-,
+	-ms-,
+	-o-,
+	'' {
+		#{$prefix}#{$property}: $value;
+	}
+}
+
+@mixin flex{
+	@include css3(display,flex);
+}
+
+@mixin flex-center{
+	@include css3(justify-content,center);
+	@include css3(align-items,center);
+}
+
+@mixin flex-item($num){
+	@include css3(flex,$num);
+}
+
+@mixin flex-v-center{
+	@include css3(align-items,center);
+}
+
+@mixin flex-v-end{
+	@include css3(align-items,flex-end);
+}
+
+@mixin flex-h-center{
+	@include css3(justify-content,center);
+}
+
+@mixin flex-h-end{
+	@include css3(justify-content,flex-end);
+}
+
+@mixin flex-between{
+	@include css3(justify-content,space-between);
+}
+
+@mixin flex-around{
+	@include css3(justify-content,space-around);
+}
+	
+	
+//-----------------------------------边框阴影-----------------------------------------
+//boxshadow:边框阴影
+//例子：@include boxshadow(3px,3px,5px,#cccccc);
+@mixin boxshadow($x: 3px, $y: 3px, $blur:5px,$shadowcolor: #cccccc) {
+	-moz-box-shadow:$x $y $blur $shadowcolor; 
+	-webkit-box-shadow:$x $y $blur $shadowcolor; 
+	box-shadow:$x $y $blur $shadowcolor;
+}
